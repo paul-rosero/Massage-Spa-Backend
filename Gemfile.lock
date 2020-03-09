@@ -61,7 +61,7 @@ GEM
     bootsnap (1.4.6-java)
       msgpack (~> 1.0)
     builder (3.2.4)
-    byebug (11.1.1)
+    coderay (1.1.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
@@ -102,11 +102,20 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry (0.12.2-java)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+      spoon (~> 0.0)
     puma (4.3.3)
       nio4r (~> 2.0)
     puma (4.3.3-java)
       nio4r (~> 2.0)
     rack (2.2.2)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.1)
@@ -140,6 +149,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     ruby_dep (1.5.0)
+    spoon (0.0.6)
+      ffi
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -175,9 +186,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
-  byebug
   listen (>= 3.0.5, < 3.2)
+  pry
   puma (~> 4.1)
+  rack-cors
   rails (~> 6.0.2, >= 6.0.2.1)
   spring
   spring-watcher-listen (~> 2.0.0)
