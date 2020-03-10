@@ -1,7 +1,7 @@
 class Client < ApplicationRecord
-  belongs_to :appointment
-  has_one :massage_theapist, through: :appointment
+    has_many :appointments
+    has_many :massage_therapist, through: :appointments
 
-  has_secure_password
-  
+    has_secure_password
+
 end
