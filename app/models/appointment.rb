@@ -1,4 +1,5 @@
 class Appointment < ApplicationRecord
-    has_one :massage_therapist
-    has_one :client
+  belongs_to :massage_therapist
+  belongs_to :client
+
 end
