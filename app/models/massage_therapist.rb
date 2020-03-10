@@ -1,4 +1,4 @@
 class MassageTherapist < ApplicationRecord
-  belongs_to :appointment
-  has_one :client, through: :appointment
+    has_many :appointments
+    has_many :clients, through: :appointments
 end
