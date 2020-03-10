@@ -6,7 +6,6 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.string :medical_history
       t.string :address
       t.string :email
-      t.belongs_to :appointment, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -6,6 +6,7 @@ one:
   modality: MyString
   appointment_time: MyString
   special_request: MyString
+  bmassage_therapist: one
 
 two:
   massage_therapist: MyString
@@ -13,3 +14,4 @@ two:
   modality: MyString
   appointment_time: MyString
   special_request: MyString
+  bmassage_therapist: two

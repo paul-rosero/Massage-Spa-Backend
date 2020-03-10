@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_000303) do
+ActiveRecord::Schema.define(version: 2020_03_10_221924) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "massage_therapist"
@@ -18,8 +18,12 @@ ActiveRecord::Schema.define(version: 2020_03_10_000303) do
     t.string "modality"
     t.string "appointment_time"
     t.string "special_request"
+    t.integer "massage_therapist_id", null: false
+    t.integer "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_appointments_on_client_id"
+    t.index ["massage_therapist_id"], name: "index_appointments_on_massage_therapist_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -28,22 +32,18 @@ ActiveRecord::Schema.define(version: 2020_03_10_000303) do
     t.string "medical_history"
     t.string "address"
     t.string "email"
-    t.integer "appointment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["appointment_id"], name: "index_clients_on_appointment_id"
   end
 
   create_table "massage_therapists", force: :cascade do |t|
     t.string "name"
     t.string "sex"
     t.integer "rating"
-    t.integer "appointment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["appointment_id"], name: "index_massage_therapists_on_appointment_id"
   end
 
-  add_foreign_key "clients", "appointments"
-  add_foreign_key "massage_therapists", "appointments"
+  add_foreign_key "appointments", "clients"
+  add_foreign_key "appointments", "massage_therapists"
 end

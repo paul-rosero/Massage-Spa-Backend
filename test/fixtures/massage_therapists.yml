@@ -4,10 +4,8 @@ one:
   name: MyString
   sex: MyString
   rating: 1
-  appointment: one
 
 two:
   name: MyString
   sex: MyString
   rating: 1
-  appointment: two

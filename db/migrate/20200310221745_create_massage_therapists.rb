@@ -4,7 +4,6 @@ class CreateMassageTherapists < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :sex
       t.integer :rating
-      t.belongs_to :appointment, null: false, foreign_key: true
 
       t.timestamps
     end

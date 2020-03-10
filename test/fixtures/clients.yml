@@ -6,7 +6,6 @@ one:
   medical_history: MyString
   address: MyString
   email: MyString
-  appointment: one
 
 two:
   name: MyString
@@ -14,4 +13,3 @@ two:
   medical_history: MyString
   address: MyString
   email: MyString
-  appointment: two
