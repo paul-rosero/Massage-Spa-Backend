@@ -2,7 +2,7 @@ class Api::V1::MassageTherapistsController < ApplicationController
     before_action :find_therapist, only: [:show, :edit, :update, :destroy]
 
     def index 
-        @therapist = MassageTherapist.all
+        @therapists = MassageTherapist.all
         render json: @therapists
     end
 
