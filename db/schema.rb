@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_03_10_221924) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
-    t.string "password_digest"
     t.string "medical_history"
     t.string "address"
     t.string "email"
