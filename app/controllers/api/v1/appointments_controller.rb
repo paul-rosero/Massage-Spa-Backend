@@ -20,8 +20,13 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def update
+        #binding.pry
         @appointment.update(appointment_params)
-        save_or_update_appointment
+        if @appointment.save
+            render json: @appointment
+        else
+            render json: {errors: @appointment.errors.full_messages}
+        end
     end
 
     def destroy
@@ -32,7 +37,7 @@ class Api::V1::AppointmentsController < ApplicationController
     private 
     
     def appointment_params
-        params.require(:appointment).permit(:massage_therapist, :client, :modality, :appointment_time, :special_request)
+        params.require(:appointment).permit(:massage_therapist_id, :client_id, :modality, :appointment_time, :special_request)
     end
 
     def find_appointment
