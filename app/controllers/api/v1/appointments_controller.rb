@@ -11,7 +11,7 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def create 
-        @appointment = Appoointment.new(appointment_params)
+        @appointment = Appointment.new(appointment_params)
         save_or_update_appointment
     end
 
@@ -36,7 +36,7 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def find_appointment
-        @appointment = Appoointment.find_by_id(params[:id])
+        @appointment = Appointment.find_by_id(params[:id])
     end
 
     def save_or_update_appointment
