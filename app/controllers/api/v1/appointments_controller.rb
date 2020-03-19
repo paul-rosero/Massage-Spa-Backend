@@ -20,6 +20,7 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def update
+        #binding.pry
         @appointment.update(appointment_params)
         create_or_update_appt
     end
@@ -40,7 +41,7 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def appointment_params
-        params.require(:appointment).permit(:massage_therapist_id, :client_id, :modality, :appointment_time, :special_request)
+        params.require(:appointment).permit([:massage_therapist], [:client], :modality, :appointment_time, :special_request)
     end
 
     def find_appointment
