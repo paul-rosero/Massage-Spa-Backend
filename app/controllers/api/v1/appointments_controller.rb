@@ -12,7 +12,7 @@ class Api::V1::AppointmentsController < ApplicationController
 
     def create 
         @appointment = Appointment.new(appointment_params)
-        save_or_update_appointment
+        create_or_update_appt
     end
 
     def edit
@@ -20,13 +20,8 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def update
-        #binding.pry
         @appointment.update(appointment_params)
-        if @appointment.save
-            render json: @appointment
-        else
-            render json: {errors: @appointment.errors.full_messages}
-        end
+        create_or_update_appt
     end
 
     def destroy
@@ -36,6 +31,14 @@ class Api::V1::AppointmentsController < ApplicationController
 
     private 
     
+    def create_or_update_appt
+        if @appointment.save
+            render json: @appointment 
+        else
+            render json: {errors: @appointment.errors.full_messages}
+        end
+    end
+
     def appointment_params
         params.require(:appointment).permit(:massage_therapist_id, :client_id, :modality, :appointment_time, :special_request)
     end
@@ -44,11 +47,4 @@ class Api::V1::AppointmentsController < ApplicationController
         @appointment = Appointment.find_by_id(params[:id])
     end
 
-    def save_or_update_appointment
-        if @appointment.save
-            render json: @appointment 
-        else
-            render json: {errors: @appointment.errors.full_messages}
-        end
-    end
 end
