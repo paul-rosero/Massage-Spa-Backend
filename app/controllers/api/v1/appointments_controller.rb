@@ -41,7 +41,7 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def appointment_params
-        params.require(:appointment).permit([:massage_therapist], [:client], :modality, :appointment_time, :special_request)
+        params.require(:appointment).permit(:massage_therapist_id, :client_id, :modality, :appointment_time, :special_request)
     end
 
     def find_appointment
