@@ -20,7 +20,6 @@ class Api::V1::AppointmentsController < ApplicationController
     end
 
     def update
-        #binding.pry
         @appointment.update(appointment_params)
         create_or_update_appt
     end
