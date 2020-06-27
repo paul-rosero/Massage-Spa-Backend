@@ -6,12 +6,14 @@ class Api::V1::AppointmentsController < ApplicationController
         render json: @appointments
     end
 
-    def show
+    def show 
+        
         render json: @appointment
     end
 
     def create 
         @appointment = Appointment.new(appointment_params)
+       
         if @appointment.save
             render json: @appointment 
         else
@@ -39,7 +41,7 @@ class Api::V1::AppointmentsController < ApplicationController
     private 
 
     def appointment_params
-        params.require(:appointment).permit(:massage_therapist_id, :client_id, :modality, :appointment_time, :special_request)
+        params.require(:appointment).permit(:massage_therapist_id, :client_id, :modality, :date_and_time, :special_request)
     end
 
     def find_appointment
