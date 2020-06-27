@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_03_19_231307) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "modality"
-    t.string "appointment_time"
+    t.datetime "date_and_time"
     t.string "special_request"
     t.integer "massage_therapist_id", null: false
     t.integer "client_id", null: false
