@@ -16,5 +16,5 @@ mt2 = MassageTherapist.create(name: "mary smith", sex: "female", rating: 5)
 client1 = Client.create(name: "julieta johnson", medical_history: "none", address: "long island", email: "julieta@julieta.com")
 client2 = Client.create(name: "gair johnson", medical_history: "diabetes", address: "long island", email: "gair@gair.com")
 
-app1 = Appointment.create(massage_therapist: mt1, client: client1, modality: "swedish", appointment_time: "7pm", special_request: "")
-app2 = Appointment.create(massage_therapist: mt2, client: client2, modality: "hot stone", appointment_time: "7pm", special_request: "")
+app1 = Appointment.create(massage_therapist: mt1, client: client1, modality: "swedish", date_and_time: DateTime.parse('3rd Feb 2001 04:00pm'), special_request: "")
+app2 = Appointment.create(massage_therapist: mt2, client: client2, modality: "hot stone", date_and_time: "2020-09-27 10:30am", special_request: "")
