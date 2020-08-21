@@ -32,7 +32,7 @@ class Api::V1::ClientsController < ApplicationController
     private 
     
     def client_params
-        params.require(:client).permit(:name, :medical_record, :address, :email)
+        params.require(:client).permit(:name, :medical_history, :address, :email)
     end
 
     def find_client
